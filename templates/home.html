@@ -1,0 +1,91 @@
+{% load  static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'home.css'%}"/>
+      <!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+</head>
+<body>
+<ul>
+  <li class="dropdown"><a href="#home" class="dropbtn">HOME</a>
+    <div class="dropdown-content">
+      <a href="#">Business</a>
+      <a href="#">Sports</a>
+      <a href="#">LifeStyle</a>
+        <a href="#">Entertainment</a>
+        <a href="#">Donations</a>
+    </div>
+  </li>
+  <li><a href="#business">Business</a></li>
+  <li><a href="#sports">Sports</a></li>
+  <li><a href="#lifestyle">LifeStyle</a></li>
+    <li><a href="#entertainment">Entertainment</a></li>
+        <li><a href="#donations">Donations</a></li>
+
+<li class="dropdown" style="float:right">
+    <a href="#login/register" class="dropbtn">Login/Register</a>
+    <div class="dropdown-content">
+      <a href="#">Register</a>
+      <a href="#">Login</a>
+    </div>
+  </li>
+
+
+</ul>
+      <div class="container"><h1>WELCOME TO NEWS APP</h1></div>
+
+<main role='main' class="container">
+    <div class="row">
+
+        {% if messages %}
+            {% for message in messages %}
+            <div class="alert alert-{{ message.tags }}">
+              {{ message }}
+            </div>
+            {% endfor %}
+        {% endif %}
+
+    </div>
+</main> {% block head %} {% endblock %}
+            </div>
+            {% block HARITEJA %}
+
+            <div class="container">
+                    <div id ="carouselEx" class="carousel" data-bs-ride="carousel" class="carousel slide">
+                        <div class="carousel-indicators">
+                            <button data-bs-target="#carouselEx" data-bs-slide-to="0" class="active"></button>
+                            <button data-bs-target="#carouselEx" data-bs-slide-to="1" ></button>
+                            <button data-bs-target="#carouselEx" data-bs-slide-to="2" ></button>
+                            <button data-bs-target="#carouselEx" data-bs-slide-to="3" ></button>
+                            <button data-bs-target="#carouselEx" data-bs-slide-to="4" ></button>
+                        </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselEX" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" ></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselEX" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" ></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+
+                    <div class="carousel-inner" style="border-radius: 20px;">
+                        <div class="carousel-item active"><img src ="/static/img/B1.jpg"/></div>
+                        <div class="carousel-item"><img src ="/static/img/S1.jpeg"/></div>
+                        <div class="carousel-item"><img src ="/static/img/L1.jpg"/></div>
+                        <div class="carousel-item"><img src ="/static/img/E1.jpg"/></div>
+                        <div class="carousel-item"><img src ="/static/img/C1.jfif"/></div>
+                    </div>
+                </div>
+            </div>
+            {% endblock %}
+        </div>
+
+    {% block content %}
+    {% endblock %}
+</body>
+</html>
